@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[MyOpenGLView awakeAfterUsingCoder:]:MyOpenGLView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MyOpenGLView drawRect:]:MyOpenGLView.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[Camera moveLeftBy:]:Camera.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MyOpenGLView createShaders]:MyOpenGLView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "(GLchar)*(tmp)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MyOpenGLView keyDown:]:MyOpenGLView.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
