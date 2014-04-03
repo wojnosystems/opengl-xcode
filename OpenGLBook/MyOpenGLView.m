@@ -132,7 +132,7 @@
     ++frameCount;
     glClear(GL_COLOR_BUFFER_BIT);
     
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
     
     
     // Apply camera rotations
@@ -185,16 +185,26 @@
 
 -(void)createVBO {
     GLfloat Vertices[] = {
+        -0.8f,  0.8f, 0.0f, 1.0f,
+        0.8f,  0.8f, 0.0f, 1.0f,
         -0.8f, -0.8f, 0.0f, 1.0f,
-        0.0f,  0.8f, 0.0f, 1.0f,
+        
+        -0.8f, -0.8f, 0.0f, 1.0f,
+        0.8f,  0.8f, 0.0f, 1.0f,
         0.8f, -0.8f, 0.0f, 1.0f
     };
+
     
     GLfloat Colors[] = {
         1.0f, 0.0f, 0.0f, 1.0f,
         0.0f, 1.0f, 0.0f, 1.0f,
-        0.0f, 0.0f, 1.0f, 1.0f
+        0.0f, 0.0f, 1.0f, 1.0f,
+        
+        0.0f, 0.0f, 1.0f, 1.0f,
+        0.0f, 1.0f, 0.0f, 1.0f,
+        1.0f, 1.0f, 1.0f, 1.0f
     };
+
     
     GLenum ErrorCheckValue = glGetError();
     
