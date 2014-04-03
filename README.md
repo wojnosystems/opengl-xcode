@@ -14,6 +14,6 @@ Please, use it in good health. I disclaim all liability and make no warrantees. 
 This XCode project (for me at least) is fully compatible with the second chapter of the most excellent OpenGL Book located at:
 http://openglbook.com/the-book/
 
-Chapter 2 is secifially at: http://openglbook.com/the-book/chapter-2-vertices-and-shapes/
+Chapter 2 is specifically at: http://openglbook.com/the-book/chapter-2-vertices-and-shapes/
 
 I'm presently at chapter 2 myself. I may update this project to include tags for the completion of other chapters as I move through the book.
