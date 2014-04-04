@@ -132,7 +132,7 @@
     ++frameCount;
     glClear(GL_COLOR_BUFFER_BIT);
     
-    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
     
     // Apply camera rotations
@@ -188,22 +188,18 @@
         -0.8f,  0.8f, 0.0f, 1.0f,
         0.8f,  0.8f, 0.0f, 1.0f,
         -0.8f, -0.8f, 0.0f, 1.0f,
-        
-        -0.8f, -0.8f, 0.0f, 1.0f,
-        0.8f,  0.8f, 0.0f, 1.0f,
         0.8f, -0.8f, 0.0f, 1.0f
     };
+
 
     
     GLfloat Colors[] = {
         1.0f, 0.0f, 0.0f, 1.0f,
         0.0f, 1.0f, 0.0f, 1.0f,
         0.0f, 0.0f, 1.0f, 1.0f,
-        
-        0.0f, 0.0f, 1.0f, 1.0f,
-        0.0f, 1.0f, 0.0f, 1.0f,
         1.0f, 1.0f, 1.0f, 1.0f
     };
+
 
     
     GLenum ErrorCheckValue = glGetError();
