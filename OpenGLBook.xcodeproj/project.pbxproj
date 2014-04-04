@@ -60,6 +60,7 @@
 		9584E0AC18E7DF1200F7B4D0 /* vertexShader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertexShader.txt; sourceTree = "<group>"; };
 		9584E0AE18E7DF2100F7B4D0 /* fragmentShader.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragmentShader.txt; sourceTree = "<group>"; };
 		958DA66E18E89D4100D1B971 /* OpenGLBook-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OpenGLBook-Prefix.pch"; sourceTree = "<group>"; };
+		95E5A0B418EE67BF00BDD26B /* Vertex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vertex.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +133,7 @@
 				953229EA18DEB41F00D338C3 /* MyOpenGLView.m */,
 				953229C218DEB31F00D338C3 /* AppDelegate.h */,
 				953229C318DEB31F00D338C3 /* AppDelegate.m */,
+				95E5A0B418EE67BF00BDD26B /* Vertex.h */,
 				953229C518DEB31F00D338C3 /* MainMenu.xib */,
 				953229CB18DEB31F00D338C3 /* Images.xcassets */,
 				953229B718DEB31F00D338C3 /* Supporting Files */,

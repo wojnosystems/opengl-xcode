@@ -18,8 +18,7 @@
     FragmentShaderId,
     ProgramId,
     VaoId,
-    VboId,
-    ColorBufferId;
+    VboId;
     
     NSString* vertexShader;
     NSString* fragmentShader;

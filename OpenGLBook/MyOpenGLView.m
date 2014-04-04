@@ -7,6 +7,7 @@
 //
 
 #import "MyOpenGLView.h"
+#import "Vertex.h"
 
 @implementation MyOpenGLView
 
@@ -184,39 +185,30 @@
 }
 
 -(void)createVBO {
-    GLfloat Vertices[] = {
-        -0.8f,  0.8f, 0.0f, 1.0f,
-        0.8f,  0.8f, 0.0f, 1.0f,
-        -0.8f, -0.8f, 0.0f, 1.0f,
-        0.8f, -0.8f, 0.0f, 1.0f
+    Vertex Vertices[] =
+    {
+        { { -0.8f, -0.8f, 0.0f, 1.0f }, { 1.0f, 0.0f, 0.0f, 1.0f } },
+        { {  0.0f,  0.8f, 0.0f, 1.0f }, { 0.0f, 1.0f, 0.0f, 1.0f } },
+        { {  0.8f, -0.8f, 0.0f, 1.0f }, { 0.0f, 0.0f, 1.0f, 1.0f } }
     };
-
-
-    
-    GLfloat Colors[] = {
-        1.0f, 0.0f, 0.0f, 1.0f,
-        0.0f, 1.0f, 0.0f, 1.0f,
-        0.0f, 0.0f, 1.0f, 1.0f,
-        1.0f, 1.0f, 1.0f, 1.0f
-    };
-
-
     
     GLenum ErrorCheckValue = glGetError();
+    const size_t BufferSize = sizeof(Vertices);
+    const size_t VertexSize = sizeof(Vertices[0]);
+    const size_t RgbOffset = sizeof(Vertices[0].XYZW);
+    
+    glGenBuffers(1, &VboId);
     
     glGenVertexArrays(1, &VaoId);
     glBindVertexArray(VaoId);
     
-    glGenBuffers(1, &VboId);
     glBindBuffer(GL_ARRAY_BUFFER, VboId);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
-    glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, 0);
-    glEnableVertexAttribArray(0);
+    glBufferData(GL_ARRAY_BUFFER, BufferSize, Vertices, GL_STATIC_DRAW);
     
-    glGenBuffers(1, &ColorBufferId);
-    glBindBuffer(GL_ARRAY_BUFFER, ColorBufferId);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Colors), Colors, GL_STATIC_DRAW);
-    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 0, 0);
+    glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, VertexSize, 0);
+    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, VertexSize, (GLvoid*)RgbOffset);
+    
+    glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
     
     ErrorCheckValue = glGetError();
@@ -224,7 +216,6 @@
     {
         [NSAlert alertWithMessageText:[NSString stringWithFormat:@"ERROR: Count not create a VBO: %d ", ErrorCheckValue] defaultButton:@"OK" alternateButton:NULL otherButton:NULL informativeTextWithFormat:@"Nothing else here..."];
     }
-
 }
 -(void)destroyVBO {
     GLenum ErrorCheckValue = glGetError();
@@ -234,7 +225,6 @@
     
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     
-    glDeleteBuffers(1, &ColorBufferId);
     glDeleteBuffers(1, &VboId);
     
     glBindVertexArray(0);
